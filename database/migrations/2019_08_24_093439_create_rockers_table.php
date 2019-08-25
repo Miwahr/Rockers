@@ -23,8 +23,9 @@ class CreateRockersTable extends Migration
             $table->string('last_name', 50)->nullable();
             $table->date('bday')->index('bday');
             $table->date('died')->nullable();
-
         });
+        DB::unprepared(file_get_contents(database_path()."/dumps/rockers.sql"));
+
     }
 
     /**

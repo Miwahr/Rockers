@@ -30,6 +30,8 @@ class CreateMembershipsTable extends Migration
             $table->date('start');
             $table->date('finish')->nullable();
         });
+        DB::unprepared(file_get_contents(database_path()."/dumps/memberships.sql"));
+
     }
 
     /**

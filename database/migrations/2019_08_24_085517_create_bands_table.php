@@ -23,6 +23,8 @@ class CreateBandsTable extends Migration
             $table->date('finish_at')->nullable();
             $table->string('website', 25);
         });
+        DB::unprepared(file_get_contents(database_path()."/dumps/bands.sql"));
+
     }
 
     /**
