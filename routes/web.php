@@ -8,6 +8,7 @@ Route::get('/', function () {
 Route::get('/add_band_form', 'BandController@add_form')->name('add_band_form')->middleware('auth');
 Route::get('/add_band', 'BandController@add')->name('add_band')->middleware('auth');
 Route::get('/show_all_bands', 'BandController@show_all')->name('show_all_bands');
+Route::get('/show_band/{id}', 'BandController@show_band')->name('show_band');
 
 Route::get('/add_rocker_form', 'RockerController@add_form')->name('add_rocker_form')->middleware('auth');
 Route::get('/add_rocker', 'RockerController@add')->name('add_rocker')->middleware('auth');

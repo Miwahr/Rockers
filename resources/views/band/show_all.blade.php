@@ -14,10 +14,10 @@
     <tbody>
     @foreach($bands as $band)
         <tr>
-            <td>{{ $band->name }}</td>
-            <td>{{ $band->start_at }}</td>
+            <td><a href="{{ route('show_band', ['id' => $band->id]) }}">{{ $band->name }}</a></td>
+            <td>{{ Carbon\Carbon::parse($band->start_at)->toFormattedDateString() }}</td>
             @if($band->finish_at)
-                <td>{{ $band->finish_at }}</td>
+                <td>{{ Carbon\Carbon::parse($band->finish_at)->toFormattedDateString() }}</td>
             @else
                 <td>-</td>
             @endif

@@ -16,9 +16,9 @@
             <tr>
                 <td>{{ $rocker->alias }}</td>
                 <td>{{ $rocker->name }}</td>
-                <td>{{ $rocker->bday }}</td>
+                <td>{{ Carbon\Carbon::parse($rocker->bday)->toFormattedDateString() }}</td>
                 @if($rocker->died)
-                    <td>{{ $rocker->died }}</td>
+                    <td>{{ Carbon\Carbon::parse($rocker->died)->toFormattedDateString() }}</td>
                 @else
                     <td>-</td>
                 @endif

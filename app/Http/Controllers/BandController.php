@@ -31,4 +31,10 @@ class BandController extends Controller
         $bands = \App\Band::show_all();
         return view('band.show_all', ['bands' => $bands]);
     }
+
+    public function show_band($id)
+    {
+        $band = \App\Band::show_band($id);
+        return view('band.show_band', ['band' => $band[0]]);
+    }
 }
