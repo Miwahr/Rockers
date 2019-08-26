@@ -1,4 +1,3 @@
-INSERT INTO `bands` (`id`, `name`, `start_at`, `finish_at`, `website`) VALUES
-(1, 'Metallica', '2019-07-30', NULL, 'www.metallica.com'),
-(2, 'miwahr', '2019-08-13', NULL, 'www.metallica.com'),
-(3, 'Guns N\' Roses', '2018-04-04', '2019-08-15', 'www.gnr.com');
+INSERT INTO `bands` (`id`,`name`,`start_at`,`finish_at`,`website`) VALUES (1,'Metallica','1989-10-28',NULL,'www.metallica.com');
+INSERT INTO `bands` (`id`,`name`,`start_at`,`finish_at`,`website`) VALUES (2,'Guns N\' Roses','1985-06-04',NULL,'www.gunsnroses.com');
+INSERT INTO `bands` (`id`,`name`,`start_at`,`finish_at`,`website`) VALUES (3,'AC/DC','1973-12-30',NULL,'www.acdc.com');

@@ -12,10 +12,14 @@ class Band extends Model
     protected $fillable = ['name', 'start_at', 'finish_at', 'website'];
 
     static public function show_all(){
-        $bands = DB::table('bands')->select(DB::raw('name, start_at, finish_at, website, GROUP_CONCAT(DISTINCT rockers.alias SEPARATOR ", ") AS members'))
+        /*SELECT b.*, group_concat( DISTINCT r.alias SEPARATOR ", ") AS Members FROM bands as b
+            LEFT JOIN memberships AS m ON b.id = m.band_id
+            LEFT JOIN rockers AS r ON r.id = m.rocker_id
+            group by b.id;*/
+        $bands = DB::table('bands')->select(DB::raw('bands.*, GROUP_CONCAT(DISTINCT rockers.alias SEPARATOR ", ") AS members'))
             ->leftJoin('memberships', 'bands.id', '=', 'memberships.band_id')
             ->leftJoin('rockers', 'rockers.id', '=', 'memberships.rocker_id')
-            ->groupBy('bands.name', 'bands.start_at', 'bands.finish_at', 'bands.website')
+            ->groupBy('bands.id')
             ->get();
         return $bands;
     }

@@ -15,8 +15,7 @@ class RockerController extends Controller
     {
         \App\Rocker::create([
             'alias' => $request->alias,
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
+            'name' => $request->name,
             'bday' => $request->bday,
             'died' => $request->died
         ]);
@@ -25,7 +24,7 @@ class RockerController extends Controller
 
     public function show_all()
     {
-        $rockers = \App\Rocker::all();
+        $rockers = \App\Rocker::show_all();
         return view('rocker.show_all', ['rockers' => $rockers]);
     }
 }

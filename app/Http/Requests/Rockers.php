@@ -25,8 +25,7 @@ class Rockers extends FormRequest
     {
         return [
             'alias' => ['required', 'regex:/^[^<>\/;]+$/', 'unique:rockers,alias'],
-            'first_name' => 'alpha|nullable',
-            'last_name' => 'alpha|nullable',
+            'name' => ['nullable', 'regex:/^[^<>\/;]+$/'],
             'bday' => 'before:today',
             'died' => 'after:bday|before:today|nullable',
             ];

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateMembershipsTable extends Migration
 {
@@ -27,8 +28,8 @@ class CreateMembershipsTable extends Migration
                   ->references('id')
                   ->on('bands')
                   ->onDelete('cascade');
-            $table->date('start');
-            $table->date('finish')->nullable();
+            $table->integer('start')->unsigned();
+            $table->integer('finish')->nullable();
         });
         DB::unprepared(file_get_contents(database_path()."/dumps/memberships.sql"));
 

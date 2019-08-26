@@ -24,8 +24,8 @@ class MemberShip extends FormRequest
     public function rules()
     {
         return [
-            'start' => 'after:rockers,bday|before:today',
-            'finish' => 'after:start|before:today|nullable'
+            'start' => '',
+            'finish' => ''
         ];
     }
 }

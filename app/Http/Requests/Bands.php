@@ -24,7 +24,7 @@ class Bands extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'regex:/^[^<>\/;]+$/', 'unique:bands,name'],
+            'name' => ['required', 'regex:/^[^<>;]+$/', 'unique:bands,name'],
             'start_at' => 'before:today',
             'finish_at' => 'after:start_at|before:today|nullable',
             'website' => ['regex:/^www\.[\w]+\.[\w]{2,3}$/']

@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /.idea/workspace.xml
+/.idea/*.xml
+/.idea/*.iml
 /vendor
 .env
 .env.backup

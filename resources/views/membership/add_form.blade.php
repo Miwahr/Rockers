@@ -17,10 +17,10 @@
             </select>
         </label>
     <label>start at
-        <input type="date" name="start">
+        <input type="text" name="start">
     </label>
     <label>finish at
-        <input type="date" name="finish">
+        <input type="text" name="finish">
     </label>
         <input type="submit" value="Add">
     </form>
