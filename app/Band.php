@@ -38,4 +38,6 @@ class Band extends Model
             ->get();
         return $bands;
     }
+
+
 }
